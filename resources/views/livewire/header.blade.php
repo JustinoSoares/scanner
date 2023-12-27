@@ -4,9 +4,9 @@
         <nav class="h-full hidden md:block lg:block">
             <ul class="flex items-center h-full gap-4">
                 <li class="h-full border-b-2 border-[#774444] flex items-center"><a href="#">Inicio</a></li>
-                <li><a href="#">OCR</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Ajuda</a></li>
+                <li><a href="{{ url("#carregarImagem") }}">OCR</a></li>
+                <li><a href="{{ url("#avaliar") }}">Sobre</a></li>
+                <li><a href="{{ url("#footer") }}">Contribuir</a></li>
             </ul>
         </nav>
         <div class="hidden lg:block md:block">

@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset("build/assets/css/main.css") }}">
+    {{-- CDN para o tailwind --}}
     <script src="https://cdn.tailwindcss.com"></script>
+    {{-- main script --}}
+    <script src="{{ asset("build/assets/js/main.js") }}"></script>
 
     <title>Scanner de Imagens</title>
 </head>
@@ -20,7 +23,7 @@
                 Exploração Visual Avançada: Desvende o Mundo com Nosso Escâner de Imagem Inovador!"
             </h1>
             <p class=" text-center md:text-justify lg:text-justify text-sm">
-                Bem-vindo ao <strong>Morphosis</strong> , onde a revolução visual ganha vida! Nosso escâner de imagem de última
+                Bem-vindo ao <strong><i>Laravel OCR Assistant</i></strong> da  <strong>Morphosis</strong> , onde a revolução visual ganha vida! Nosso escâner de imagem de última
                 geração está aqui para transformar a maneira como você interage com o mundo visual. Explore detalhes
                 fascinantes, descubra nuances ocultas e mergulhe em um universo de imagens como nunca antes.
             </p>
@@ -28,9 +31,79 @@
         <div class="hidden md:block lg:block">
             <img class="w-[20rem] h-[20rem]" src="{{ asset("build/assets/svg/ilustrar-scanner.svg") }}" alt="">
         </div>
-
     </section>
     @livewire("carregar-imagem")
+    {{-- Resultado --}}
+    <section class="mx-20">
+        <ul class="flex gap-1 md:flex-col md:float-end lg:flex-col lg:float-end  items-center justify-center">
+            <li class="p-2 " id="text-left">
+                <img class=" w-6 h-6 cursor-pointer" src="{{ asset("build/assets/svg/justify-left.svg") }}" alt="">
+            </li>
+            <li class="p-2 "  id="text-justify">
+                <img class="w-6 h-6 cursor-pointer" src="{{ asset("build/assets/svg/justify.svg") }}" alt="">
+            </li>
+            <li class="p-2 "  id="text-center">
+                <img class="w-6 h-6 cursor-pointer" src="{{ asset("build/assets/svg/justify-center.svg") }}" alt="">
+            </li>
+            <li class="p-2 "  id="text-right">
+                <img class="w-6 h-6 cursor-pointer" src="{{ asset("build/assets/svg/justify-right.svg") }}" alt="">
+            </li>
+        </ul>
+        @if(isset($imagem))
+        {{-- <img class="w-20 h-20 bg-red-600" src="{{$imagem}} " alt=""> --}}
+
+        @endif
+        {{-- Mostrar o texto --}}
+        <div id="texto" class="h-[20rem] p-3 text-black overflow-y-scroll bg-slate-100">
+            <code>
+                {{-- <pre> --}}
+               @if(isset($texto))
+               @foreach ($linhas as $linha )
+                {{ $linha }}
+               @endforeach
+               @endif
+                {{-- </pre> --}}
+            </code>
+        </div>
+        @if(session('success'))
+        <small class="text-green-700 ">
+            {{ "Muito Bom!!" }}
+        </small>
+        @endif
+        @if(isset($error))
+        <small class="text-red-700 ">
+            {{ $error }}
+        </small>
+        @endif
+
+        {{-- Avaliações --}}
+        <div id="avaliar" class="text-center mt-10">
+            <h1 class="font-bold text-[15pt]">Avaliar o Programa</h1>
+            <hr class="border-b-[2px] mt-2 w-4 mx-auto border-[#774444]" style="">
+        </div>
+        <div class="full-star">
+            <ul class="flex items-center justify-center mt-5 gap-10">
+                <li class="">
+                    <img class="star w-10 h-10 cursor-pointer" src="{{ asset("build/assets/svg/star.svg") }}" alt="">
+                </li>
+                <li>
+                    <img class="star w-10 h-10  cursor-pointer" src="{{ asset("build/assets/svg/star.svg") }}" alt="">
+                </li>
+                <li>
+                    <img class="star w-10 h-10  cursor-pointer" src="{{ asset("build/assets/svg/star.svg") }}" alt="">
+                </li>
+                <li>
+                    <img class="star w-10 h-10  cursor-pointer" src="{{ asset("build/assets/svg/star.svg") }}" alt="">
+                </li>
+
+                <li>
+                    <img class="star w-10 h-10  cursor-pointer" src="{{ asset("build/assets/svg/star.svg") }}" alt="">
+                </li>
+
+
+            </ul>
+        </div>
+    </section>
     {{-- About --}}
      <section>
         <div class="text-center mt-10">
@@ -86,6 +159,78 @@
         </div>
     </section>
     @livewire("footer")
+    @livewireScripts
 </body>
+<script>
+let text = document.querySelector("#texto");
+let justify = document.querySelector("#text-justify");
+let left = document.querySelector("#text-left");
+let right = document.querySelector("#text-right");
+let center = document.querySelector("#text-center");
+// let textoPassado = "text-justify";
+ let color = "bg-slate-200";
+text.classList.add("text-justify");
+justify.classList.add(color)
+//Centralizar o texto
+center.onclick = () =>{
+    //Remove todas as outras formataões de texto
+    text.classList.remove("text-justify");
+    text.classList.remove("text-left");
+    text.classList.remove("text-right");
 
+     //Remove todas as outras formataões de background-color
+     justify.classList.remove(color)
+     left.classList.remove(color)
+     right.classList.remove(color)
+
+    text.classList.add("text-center");
+    center.classList.add(color)
+}
+
+//Justicar o texto
+justify.onclick = () =>{
+    //Remove todas as outras formataões de texto
+    text.classList.remove("text-center");
+    text.classList.remove("text-left");
+    text.classList.remove("text-justify");
+
+     //Remove todas as outras formataões de background-color
+     center.classList.remove(color)
+     left.classList.remove(color)
+     right.classList.remove(color)
+
+    text.classList.add("text-justify");
+    justify.classList.add(color)
+}
+//Para a esquerda
+left.onclick = () =>{
+    //Remove todas as outras formataões de texto
+    text.classList.remove("text-center");
+    text.classList.remove("text-right");
+    text.classList.remove("text-justify");
+
+     //Remove todas as outras formataões de background-color
+     justify.classList.remove(color)
+     center.classList.remove(color)
+     right.classList.remove(color)
+
+    text.classList.add("text-left");
+    left.classList.add(color)
+}
+//Para a Direita
+right.onclick = () =>{
+    //Remove todas as outras formataões de texto
+    text.classList.remove("text-center");
+    text.classList.remove("text-left");
+    text.classList.remove("text-justify");
+
+     //Remove todas as outras formataões de background-color
+     justify.classList.remove(color)
+     center.classList.remove(color)
+     left.classList.remove(color)
+
+    text.classList.add("text-right");
+    right.classList.add(color)
+}
+</script>
 </html>

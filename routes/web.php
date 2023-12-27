@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ocrController;
 use App\Http\Controllers\qrCodeController;
+use App\Http\Controllers\uploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,21 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/", function(){
-    return view("inicio") ;
+Route::get("/", function () {
+    return view("inicio");
 });
-Route::get("/code",[qrCodeController::class, "show"])->name("code");
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified',
-// ])->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('dashboard');
-//     })->name('dashboard');
-// });
+Route::get("/code", [qrCodeController::class, "show"])->name("code");
+// Route::get("/ocr", [ocrController::class, "show"])->name("ocr");
+Route::post('/upload-imagem', [uploadController::class, 'uploadImagem'])->name('upload');
