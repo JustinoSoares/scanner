@@ -25,7 +25,7 @@ Este projeto é uma aplicação Laravel que oferece uma solução eficiente para
 - Esse é um exemplo de uma capitura que retirou-se o texto
 <img src="imagensREADM/exemploTexto.png">
 <img src="imagensREADM/avaliar.png">
-<img src="imagensREADM/footer.png"">
+<img src="imagensREADM/footer.png">
 
 
 
