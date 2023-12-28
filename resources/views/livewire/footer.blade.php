@@ -10,6 +10,7 @@
                 </p>
             </div>
             <form class="w-[20rem]">
+                @csrf
                 <input class="w-full  p-2 rounded-lg outline-none placeholder:text-slate-600 " type="email"
                     placeholder="justinocsoares123@gmail.com">
                 <textarea

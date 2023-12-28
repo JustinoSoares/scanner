@@ -84,20 +84,20 @@
         <div class="full-star">
             <ul class="flex items-center justify-center mt-5 gap-10">
                 <li class="">
-                    <img class="star w-10 h-10 cursor-pointer" src="{{ asset("build/assets/svg/star.svg") }}" alt="">
+                    <img onclick="getStar(1)" class="star w-10 h-10 cursor-pointer" src="{{ asset("build/assets/svg/star.svg") }}" alt="">
                 </li>
                 <li>
-                    <img class="star w-10 h-10  cursor-pointer" src="{{ asset("build/assets/svg/star.svg") }}" alt="">
+                    <img onclick="getStar(2)" class="star w-10 h-10  cursor-pointer" src="{{ asset("build/assets/svg/star.svg") }}" alt="">
                 </li>
                 <li>
-                    <img class="star w-10 h-10  cursor-pointer" src="{{ asset("build/assets/svg/star.svg") }}" alt="">
+                    <img onclick="getStar(3)" class="star w-10 h-10  cursor-pointer" src="{{ asset("build/assets/svg/star.svg") }}" alt="">
                 </li>
                 <li>
-                    <img class="star w-10 h-10  cursor-pointer" src="{{ asset("build/assets/svg/star.svg") }}" alt="">
+                    <img onclick="getStar(4)" class="star w-10 h-10  cursor-pointer" src="{{ asset("build/assets/svg/star.svg") }}" alt="">
                 </li>
 
                 <li>
-                    <img class="star w-10 h-10  cursor-pointer" src="{{ asset("build/assets/svg/star.svg") }}" alt="">
+                    <img onclick="getStar(5)" class="star w-10 h-10  cursor-pointer" src="{{ asset("build/assets/svg/star.svg") }}" alt="">
                 </li>
 
 
@@ -162,7 +162,19 @@
     @livewireScripts
 </body>
 <script>
-let text = document.querySelector("#texto");
+
+let stars = document.querySelectorAll(".star");
+function getStar(pos) {
+   stars.forEach((star,index) => {
+    if (index < pos) {
+      star.src = "{{ asset("build/assets/svg/star-fill.svg") }}";
+    }
+  });
+}
+
+//Justificação do texto
+
+ let text = document.querySelector("#texto");
 let justify = document.querySelector("#text-justify");
 let left = document.querySelector("#text-left");
 let right = document.querySelector("#text-right");
@@ -232,5 +244,11 @@ right.onclick = () =>{
     text.classList.add("text-right");
     right.classList.add(color)
 }
+
+
+//Estrelas
+
+
+
 </script>
 </html>
