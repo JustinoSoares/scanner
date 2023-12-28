@@ -19,13 +19,13 @@ Este projeto é uma aplicação Laravel que oferece uma solução eficiente para
 - Starstap: Morphosis
 
 ## Imagens
-![]("imagensREADM/inicio.png")
-![]("imagensREADM/upload.png")
-![]("imagensREADM/texto.png")
+<img src="imagensREADM/inicio.png">
+<img src="imagensREADM/upload.png">
+<img src="imagensREADM/texto.png">
 - Esse é um exemplo de uma capitura que retirou-se o texto
-![]("imagensREADM/exemploTexto.png")
-![]("imagensREADM/avaliar.png")
-![]("imagensREADM/footer.png")
+<img src="imagensREADM/exemploTexto.png">
+<img src="imagensREADM/avaliar.png">
+<img src="imagensREADM/footer.png"">
 
 
 
