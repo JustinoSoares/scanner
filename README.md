@@ -26,6 +26,8 @@ Este projeto é uma aplicação Laravel que oferece uma solução eficiente para
 <img src="imagensREADM/exemploTexto.png">
 <img src="imagensREADM/avaliar.png">
 <img src="imagensREADM/footer.png">
+<video src="imagensREADM/demostração.webm">
+
 
 
 
