@@ -17,7 +17,7 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $exception)
     {
         if ($exception instanceof PostTooLargeException) {
-            return response()->view('inicio', [
+            return response()->view('resposta', [
                 "error" => "Arquivo não suportado"
             ], 500);
         }

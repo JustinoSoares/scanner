@@ -17,19 +17,19 @@
 <body>
     @livewire("header")
     {{-- Welcome --}}
-    <section class="flex justify-center md:justify-between lg:justify-between mx-[5rem]  items-center mt-10">
-        <div class="w-[30rem]">
-            <h1 class="font-[800] text-[#774444] text-center md:text-start lg:text-startj   text-[1.5rem]">
+    <section class="flex justify-center md:justify-center lg:justify-between mx-[5rem]  items-center mt-10">
+        <div class="w-[40rem]">
+            <h1 class="font-bold text-[#774444] text-center md:text-center lg:text-start   text-[1.8rem]">
                 Exploração Visual Avançada: Desvende o Mundo com Nosso Escâner de Imagem Inovador!"
             </h1>
-            <p class=" text-center md:text-justify lg:text-justify text-sm">
+            <p class=" text-center md:text-center lg:text-justify text-lg">
                 Bem-vindo ao <strong><i>Laravel OCR Assistant</i></strong> da  <strong>Morphosis</strong> , onde a revolução visual ganha vida! Nosso escâner de imagem de última
                 geração está aqui para transformar a maneira como você interage com o mundo visual. Explore detalhes
                 fascinantes, descubra nuances ocultas e mergulhe em um universo de imagens como nunca antes.
             </p>
         </div>
-        <div class="hidden md:block lg:block">
-            <img class="w-[20rem] h-[20rem]" src="{{ asset("build/assets/svg/ilustrar-scanner.svg") }}" alt="">
+        <div class="hidden md:hidden lg:block">
+            <img class="w-[30rem] h-[30rem]" src="{{ asset("build/assets/svg/ilustrar-scanner.svg") }}" alt="">
         </div>
     </section>
     @livewire("carregar-imagem")
@@ -49,11 +49,7 @@
                 <img class="w-6 h-6 cursor-pointer" src="{{ asset("build/assets/svg/justify-right.svg") }}" alt="">
             </li>
         </ul>
-        @if(isset($imagem))
-        {{-- <img class="w-20 h-20 bg-red-600" src="{{$imagem}} " alt=""> --}}
-
-        @endif
-        {{-- Mostrar o texto --}}
+      {{-- Mostrar o texto --}}
         <div id="texto" class="h-[20rem] p-3 text-black overflow-y-scroll bg-slate-100">
             <code>
                 {{-- <pre> --}}
@@ -110,7 +106,7 @@
             <h1 class="font-bold text-[15pt]">Sobre</h1>
             <hr class="border-b-[2px] mt-2 w-4 mx-auto border-[#774444]" style="">
         </div>
-        <div class="flex flex-col md:flex-row lg:flex-row items-center justify-center gap-1 my-10">
+        <div class="flex flex-col gap-x-10 mx-3 md:flex-row lg:flex-row items-center justify-center gap-1 my-10">
             <div class="sobre1 w-[20rem]">
                 <div class="flex justify-center md:justify-start lg:justify-start">
                     <img class="w-[4rem] h-[4rem]" src="{{ asset("build/assets/svg/chip-fill.svg") }}" alt="">

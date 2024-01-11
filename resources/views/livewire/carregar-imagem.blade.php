@@ -2,7 +2,7 @@
     {{-- Carregar imagem. --}}
     <section id="carregarImagem">
         <div class="text-center ">
-            <h1 class="font-bold text-[15pt]">Carregar Imagem</h1>
+            <h1 class="font-bold text-[15pt] mt-10">Carregar Imagem</h1>
             <hr class="border-b-[2px]  mt-2 w-4 mx-auto border-[#774444]" style="">
         </div>
 
