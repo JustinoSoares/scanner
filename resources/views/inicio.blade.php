@@ -80,20 +80,20 @@
         <div class="full-star">
             <ul class="flex items-center justify-center mt-5 gap-10">
                 <li class="">
-                    <img onclick="getStar(1)" class="star w-10 h-10 cursor-pointer" src="{{ asset("build/assets/svg/star.svg") }}" alt="">
+                    <img onclick="getStar(1)" class="star w-10 h-10 cursor-pointer" src="{{ asset("build/assets/svg/star.png") }}" alt="">
                 </li>
                 <li>
-                    <img onclick="getStar(2)" class="star w-10 h-10  cursor-pointer" src="{{ asset("build/assets/svg/star.svg") }}" alt="">
+                    <img onclick="getStar(2)" class="star w-10 h-10  cursor-pointer" src="{{ asset("build/assets/svg/star.png") }}" alt="">
                 </li>
                 <li>
-                    <img onclick="getStar(3)" class="star w-10 h-10  cursor-pointer" src="{{ asset("build/assets/svg/star.svg") }}" alt="">
+                    <img onclick="getStar(3)" class="star w-10 h-10  cursor-pointer" src="{{ asset("build/assets/svg/star.png") }}" alt="">
                 </li>
                 <li>
-                    <img onclick="getStar(4)" class="star w-10 h-10  cursor-pointer" src="{{ asset("build/assets/svg/star.svg") }}" alt="">
+                    <img onclick="getStar(4)" class="star w-10 h-10  cursor-pointer" src="{{ asset("build/assets/svg/star.png") }}" alt="">
                 </li>
 
                 <li>
-                    <img onclick="getStar(5)" class="star w-10 h-10  cursor-pointer" src="{{ asset("build/assets/svg/star.svg") }}" alt="">
+                    <img onclick="getStar(5)" class="star w-10 h-10  cursor-pointer" src="{{ asset("build/assets/svg/star.png") }}" alt="">
                 </li>
 
 
@@ -104,7 +104,7 @@
      <section>
         <div class="text-center mt-10">
             <h1 class="font-bold text-[15pt]">Sobre</h1>
-            <hr class="border-b-[2px] mt-2 w-4 mx-auto border-[#774444]" style="">
+            <hr class="border-b-[2px] mt-2 w-4 mx-auto border-[#774444]">
         </div>
         <div class="flex flex-col gap-x-10 mx-3 md:flex-row lg:flex-row items-center justify-center gap-1 my-10">
             <div class="sobre1 w-[20rem]">
@@ -124,7 +124,7 @@
 
             <div class="sobre2 w-[20rem]">
                 <div class="flex justify-center md:justify-start lg:justify-start">
-                    <img class="w-[4rem] h-[4rem]" src="{{ asset("build/assets/svg/lampa.svg") }}" alt="">
+                    <img class="w-[4rem] h-[4rem]" src="{{ asset("build/assets/svg/lampada.svg") }}" alt="">
                 </div>
                 <div class="text-center md:text-start lg:text-start ">
                     <h3 class="font-bold text-[16pt]">Ideias que Fluem Livremente:</h3>
@@ -161,9 +161,9 @@
 
 let stars = document.querySelectorAll(".star");
 function getStar(pos) {
-   stars.forEach((star,index) => {
+   stars.forEach((star, index) => {
     if (index < pos) {
-      star.src = "{{ asset("build/assets/svg/star-fill.svg") }}";
+      star.src = "{{ asset("build/assets/svg/star-fill.png") }}";
     }
   });
 }
