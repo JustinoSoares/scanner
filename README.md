@@ -1,4 +1,4 @@
-# Laravel OCR Assistant
+## Laravel OCR Assistant
 
 ## Descrição
 Este projeto é uma aplicação Laravel que oferece uma solução eficiente para transformar imagens contendo texto em texto copiável. É uma ferramenta valiosa para otimizar fluxos de trabalho que envolvem a extração de informações de imagens, economizando tempo e aumentando a precisão.
